@@ -1,0 +1,12 @@
+/*
+ * Crisp's fonts, self-hosted: Inter Variable (UI) and Geist Mono (ids, amounts, code), both under
+ * the SIL Open Font License 1.1, from the @fontsource packages this design depends on.
+ *
+ * Import this file once in your app's entry (`import '@strutvane/design-crisp/fonts.css'`); your
+ * bundler (Vite, for a Strutvane app) resolves the package paths and serves the font files from
+ * your own origin, so no third-party font host is contacted and `font-src 'self'` is enough.
+ * Without it, Crisp falls back to the system UI font.
+ */
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource/geist-mono/400.css";
+@import "@fontsource/geist-mono/500.css";
