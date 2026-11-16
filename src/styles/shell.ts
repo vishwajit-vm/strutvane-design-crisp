@@ -36,7 +36,7 @@ ${R} .svc-nav-badge{font-family:var(--sv-font-mono);font-size:var(--sv-font-size
 ${R} .svc-topbar{display:flex;align-items:center;gap:8px;min-height:48px;padding:8px calc(var(--sv-space) * 6);border-bottom:1px solid var(--sv-border)}
 ${R} .svc-topbar-menu{display:none}
 ${R} .svc-topbar-search{flex:1;min-width:0}
-${R} .svc-topbar-search .svc-button{width:min(320px,100%);justify-content:flex-start;color:var(--sv-fg-muted);background:var(--sv-surface-subtle);border-color:var(--sv-border);box-shadow:none;font-weight:400}
+${R} .svc-topbar-search .svc-button{width:min(320px,100%);justify-content:flex-start;color:var(--sv-fg-muted);background:var(--sv-surface-subtle);border-color:var(--sv-border);box-shadow:none;font-weight:400;overflow:hidden}
 ${R} .svc-topbar-search .svc-button:hover{background:var(--sv-surface-muted)}
 ${R} .svc-topbar-search kbd{margin-left:auto}
 ${R} .svc-topbar-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;min-width:0}
@@ -77,6 +77,9 @@ ${R} .svc-panel>main{padding:16px}
 @media (max-width:40rem){
 ${R} .svc-topbar{flex-wrap:wrap}
 ${R} .svc-topbar-search kbd{display:none}
+${R} .svc-topbar-search{order:3;flex:1 1 100%}
+${R} .svc-topbar-search .svc-button{width:100%}
+${R} .svc-topbar-actions{margin-left:auto}
 ${R} .svc-auth{padding-top:8vh}
 ${R} .svc-auth-card{padding:24px}
 }
