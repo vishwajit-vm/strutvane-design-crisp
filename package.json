@@ -1,6 +1,6 @@
 {
   "name": "@strutvane/design-crisp",
-  "version": "0.1.0",
+  "version": "0.2.0-next.0",
   "description": "Crisp: the default Strutvane admin design. Clean, minimal and business-first: quiet neutrals, one accent from --brand-hue, dense readable tables, light and dark, for the @strutvane/ui Design contract.",
   "keywords": [
     "strutvane",
@@ -32,8 +32,14 @@
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
     },
-    "./crisp.css": "./dist/crisp.css",
-    "./fonts.css": "./dist/fonts.css",
+    "./crisp.css": {
+      "types": "./dist/css.d.mts",
+      "default": "./dist/crisp.css"
+    },
+    "./fonts.css": {
+      "types": "./dist/css.d.mts",
+      "default": "./dist/fonts.css"
+    },
     "./package.json": "./package.json"
   },
   "files": [

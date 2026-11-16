@@ -11,7 +11,7 @@
   checks before a gate is accepted; the project lead approves the staged release.
 -->
 
-Package: (name) · Version: (version) · Last reviewed: (YYYY-MM-DD)
+Package: `@strutvane/design-crisp` · Version: `0.2.0-next.0` · Last reviewed: 2026-11-16 (local runs only; CI evidence pending until the repo exists and `@strutvane/ui@0.2.0-next.0` is on npm)
 
 | Gate | What must be true (summary; docs/19 is the source) | Checked by | Status | Evidence | Date |
 |---|---|---|---|---|---|
