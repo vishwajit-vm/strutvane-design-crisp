@@ -10,7 +10,7 @@ It implements the [`@strutvane/ui`](https://github.com/vishwajit-vm/strutvane-ui
 every brand hue, no hard-coded colours, axe with 0 violations on the reference screens, and no
 horizontal scroll at 375 px.
 
-> **Status:** `0.2.0-next.0` pre-release on the core train (with `@strutvane/ui` 0.2). Not
+> **Status:** `0.2.0-next.1` pre-release on the core train (with `@strutvane/ui` 0.2). Not
 > released on npm yet.
 
 ## Install
@@ -22,7 +22,7 @@ to an existing app:
 npm install @strutvane/design-crisp
 ```
 
-Peer dependencies: `@strutvane/ui@^0.2.0-next.0` and `react@^19.2.0`. Node 24.3 or later. ESM only.
+Peer dependencies: `@strutvane/ui@^0.2.0-next.1` and `react@^19.2.0`. Node 24.3 or later. ESM only.
 
 ## Use
 

@@ -40,9 +40,16 @@ describe('package.json', () => {
   })
 
   it('has @strutvane/ui (the v2 Design contract) and React as peers, not dependencies', () => {
-    expect(pkg.peerDependencies).toEqual({ '@strutvane/ui': '^0.2.0-next.0', react: '^19.2.0' })
+    expect(pkg.peerDependencies).toEqual({ '@strutvane/ui': '^0.2.0-next.1', react: '^19.2.0' })
     expect(pkg.dependencies['@strutvane/ui']).toBeUndefined()
     expect(pkg.dependencies['react']).toBeUndefined()
+  })
+
+  it('tests against the exact ui version the peer range starts at', () => {
+    // The peer floor must be a published ui version that this repo's own tests ran against.
+    // Listing ui as a devDependency also keeps its optional peers (vitest, axe-core) out of the
+    // production tree, so `npm audit --omit=dev` audits what a user really installs.
+    expect(`^${pkg.devDependencies['@strutvane/ui']}`).toBe(pkg.peerDependencies['@strutvane/ui'])
   })
 
   it('exports the JS entry with types first, plus the two CSS files', () => {

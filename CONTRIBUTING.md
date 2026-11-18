@@ -19,6 +19,7 @@ npm install
 npm run ci          # biome → tsc → vitest with coverage (incl. designConformance) → build
 ```
 
-While `@strutvane/ui@0.2.0-next.0` is not on npm yet, link a local build of the ui repo's
-`v2/behaviour` branch into `node_modules/@strutvane/ui` (dev only; never commit a `file:` or
-`link:` dependency).
+`@strutvane/ui` is a peer dependency and also a pinned devDependency, so the tests run against
+the exact published version the peer range starts at. To try an unreleased ui change, link a
+local build into `node_modules/@strutvane/ui` (dev only; never commit a `file:` or `link:`
+dependency).

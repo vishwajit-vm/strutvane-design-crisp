@@ -1,6 +1,6 @@
 {
   "name": "@strutvane/design-crisp",
-  "version": "0.2.0-next.0",
+  "version": "0.2.0-next.1",
   "description": "Crisp: the default Strutvane admin design. Clean, minimal and business-first: quiet neutrals, one accent from --brand-hue, dense readable tables, light and dark, for the @strutvane/ui Design contract.",
   "keywords": [
     "strutvane",
@@ -75,12 +75,13 @@
     "@tabler/icons-react": "3.52.0"
   },
   "peerDependencies": {
-    "@strutvane/ui": "^0.2.0-next.0",
+    "@strutvane/ui": "^0.2.0-next.1",
     "react": "^19.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.7",
     "@changesets/cli": "3.0.3",
+    "@strutvane/ui": "0.2.0-next.1",
     "@tanstack/react-form": "1.33.5",
     "@tanstack/react-query": "5.107.1",
     "@tanstack/react-table": "9.3.1",
@@ -122,5 +123,11 @@
     ],
     "compat": "^0.2.0-next.0",
     "docs": "https://github.com/vishwajit-vm/strutvane-design-crisp#readme"
+  },
+  "allowScripts": {
+    "esbuild@0.18.20": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": false
   }
 }

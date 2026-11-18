@@ -14,8 +14,8 @@ The file below is synced from strutvane-tooling and is identical in every repo. 
 
 ## Status
 
-- `0.2.0-next.0` (changesets pre mode `next`, core train decision 128), **not released**. The GitHub repo `vishwajit-vm/strutvane-design-crisp` and the tooling manifest entry are created by the coordinator.
-- **TEMPORARY:** `@strutvane/ui@0.2.0-next.0` is not on npm yet. Locally its build is copied into `node_modules/@strutvane/ui` (never a `file:`/`link:` spec in package.json). Once it is published, run `npm install` once so the lockfile records it; then `npm ci` works in CI.
+- `0.2.0-next.1` (changesets pre mode `next`, core train decision 128), **not released**. The GitHub repo `vishwajit-vm/strutvane-design-crisp` and the tooling manifest entry are created by the coordinator.
+- Built and tested against the published `@strutvane/ui@0.2.0-next.1` (the peer floor, also pinned as a devDependency; `test/package.test.ts` keeps the two equal). Plain `npm ci` works from the committed lockfile.
 
 ## Commands
 
@@ -46,7 +46,7 @@ node ../tooling/scripts/sync.mjs --repo design-crisp   # re-sync shared configs 
 
 ## Boundaries
 
-- Peers only: `@strutvane/ui` (`^0.2.0-next.0`) and `react`. Never import the framework, auth or another design.
+- Peers only: `@strutvane/ui` (`^0.2.0-next.1`) and `react`. Never import the framework, auth or another design.
 - Slots never fetch, keep app state or read the manifest; they place what the behaviour hands them.
 - A contract gap is fixed in `@strutvane/ui` (with an RFC), not worked around with private hooks here.
 
