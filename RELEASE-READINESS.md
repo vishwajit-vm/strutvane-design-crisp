@@ -11,15 +11,15 @@
   checks before a gate is accepted; the project lead approves the staged release.
 -->
 
-Package: `@strutvane/design-crisp` · Version: `0.2.0-next.0` · Last reviewed: 2026-11-16 (local runs only; CI evidence pending until the repo exists and `@strutvane/ui@0.2.0-next.0` is on npm)
+Package: `@strutvane/design-crisp` · Version: `0.2.0-next.1` · Last reviewed: 2026-11-19 (local runs only, against the published `@strutvane/ui@0.2.0-next.1`; CI evidence pending)
 
 | Gate | What must be true (summary; docs/19 is the source) | Checked by | Status | Evidence | Date |
 |---|---|---|---|---|---|
-| R1 Code | Strict TS, ESM, lint clean, no `console.` in `src/`, no TODO/FIXME without an issue, TSDoc on every export | CI `verify` (`npm run ci`, `check-code-rules.mjs`) | not checked | | |
-| R2 Tests | Green on Node 24 and 26 × Linux, Windows, macOS; coverage ≥ 90/90/85/90; type-level tests; 3 green runs in a row; no unhandled rejections or open handles | CI `verify` matrix and `repeat` job | not checked | | |
-| R3 Security | Threat model; attack-style tests; parsers fuzzed; review with 0 open critical/high; `npm audit --omit=dev` 0 high/critical; secrets scan clean | `security-reviewer` report; CI `security` job | not checked | | |
+| R1 Code | Strict TS, ESM, lint clean, no `console.` in `src/`, no TODO/FIXME without an issue, TSDoc on every export | CI `verify` (`npm run ci`, `check-code-rules.mjs`) | pass (local) | `npm run ci` (biome, `tsc`) and `check-code-rules.mjs` green on Windows, Node 24.21, npm 11.19 | 2026-11-19 |
+| R2 Tests | Green on Node 24 and 26 × Linux, Windows, macOS; coverage ≥ 90/90/85/90; type-level tests; 3 green runs in a row; no unhandled rejections or open handles | CI `verify` matrix and `repeat` job | partial | Local: plain `npm ci`, then `npm run ci` 3× in a row green (106 tests, coverage thresholds met), `test/types.test-d.ts`. Matrix (Node 26, Linux, macOS) needs CI | 2026-11-19 |
+| R3 Security | Threat model; attack-style tests; parsers fuzzed; review with 0 open critical/high; `npm audit --omit=dev` 0 high/critical; secrets scan clean | `security-reviewer` report; CI `security` job | partial | `npm audit --omit=dev --audit-level=high`: 0 vulnerabilities. `@strutvane/ui` is now also a pinned devDependency, so its optional peers (vitest) stay out of the production tree. TruffleHog and the security review need CI / a reviewer | 2026-11-19 |
 | R4 Resilience | Failure scenarios named and tested; fails closed; idempotent retries; soak test with no growth | Resilience suites; `npm run test:soak` | not checked | | |
-| R5 Packaging | publint and attw clean; tarball has no tests, fixtures, secrets or local map paths; exports resolve; `engines.node` ≥ 24.3; one framework copy; LICENSE, README, CHANGELOG; a changeset | CI `package-check` job | not checked | | |
+| R5 Packaging | publint and attw clean; tarball has no tests, fixtures, secrets or local map paths; exports resolve; `engines.node` ≥ 24.3; one framework copy; LICENSE, README, CHANGELOG; a changeset | CI `package-check` job | pass (local) | `check-package.mjs`, `check-deps.mjs` green; `publint --strict` (0.3.25) "All good" and `attw --profile esm-only` (0.18.5) clean on the packed 0.2.0-next.1 tarball; changeset `ui-peer-next-1` | 2026-11-19 |
 | R6 Integration | Installs alone and with every package, in any order, identically; re-install is a no-op; complete `.env.example`; boot fails closed; only the six connections; Northwind Ops green | Hub nightly ecosystem job; installer e2e | not checked | | |
 | R7 Docs | Every public feature documented with tested examples; upgrade guide; packages data, what's-new, versioning table and deprecations updated in the same change | Docs site tests | not checked | | |
 | R8 Release | Version per ADR-0020; staged by CI with provenance, approved with 2FA (ADR-0018); right dist-tag; release notes; rollback plan; `versions.json` updated | Release workflow; owner approval | not checked | | |
